@@ -1,0 +1,5 @@
+INDEX VERSION 1.131
+C:\Users\mireu\Desktop\coding\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1644010469.index
+\01Basic\src\main\java
+C:\Users\mireu\Desktop\coding\Spring\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\883915102.index
+\01Basic\src\main\java
