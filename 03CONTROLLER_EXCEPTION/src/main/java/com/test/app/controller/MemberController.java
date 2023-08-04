@@ -1,6 +1,7 @@
 package com.test.app.controller;
 
 import java.beans.PropertyEditorSupport;
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -54,6 +55,12 @@ public class MemberController {
 		}
 		
 		return "";
+	}
+	
+	@GetMapping("/list1")
+	public void list1() throws Exception {
+		System.out.println("GET /member/list1");
+		throw new FileNotFoundException("파일이 없다..");
 	}
 
 }

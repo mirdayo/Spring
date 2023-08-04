@@ -57,14 +57,14 @@ public class MemoController {
 //		model.addAttribute("ex", ex);
 //		return "memo/error";
 //	}
-	
-	@ExceptionHandler(Exception.class)
-	public String error2(Exception ex, Model model) {
-		System.out.println("Exception...ex " + ex);
-		System.out.println("Exception...ex ");
-		model.addAttribute("ex", ex);
-		return "memo/error";
-	}
+//	
+//	@ExceptionHandler(Exception.class)
+//	public String error3(Exception ex, Model model) {
+//		System.out.println("Exception...ex " + ex);
+//		System.out.println("Exception...ex ");
+//		model.addAttribute("ex", ex);
+//		return "memo/error";
+//	}
 	
 	@GetMapping("/list1")
 	public void list1() throws Exception {
