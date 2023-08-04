@@ -1,0 +1,132 @@
+01 기본도구 설치
+- JDK 11버전 이상
+- 환경변수설정(sysdm.cpl ->Path)
+- Tomcat 9버전이상
+- STS3 설치 (https://github.com/spring-attic/toolsuite-distribution/wiki/Spring-Tool-Suite-3)
+
+
+02 기본 STS 환경
+- files Encoding UTF-8(JSON/CSS/HTML/JSP)
+- window -> preference -> general -> workspace->Text File Encoding UTF-8
+- Emmet 설치하기(window->new Install SW -> Contact all update sites.. 체크해제) 
+https://soda-dev.tistory.com/9
+- Tune 설치하기(자바스크립트 자동완성) (window->new Install SW -> Contact all update sites.. 체크해제)
+https://choitaetae.tistory.com/84
+
+03 pom.xml 버전 설정
+	//----------------
+	<properties>
+		[변경]<java-version>11</java-version>
+		[변경]<org.springframework-version>5.0.7.RELEASE</org.springframework-version>
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+	</properties>
+	//..............
+	 <plugins>
+	            <plugin>
+	                <groupId>org.apache.maven.plugins</groupId>
+	                <artifactId>maven-compiler-plugin</artifactId>
+	                [변경]<version>3.5.1</version>
+	                <configuration>
+	                   	[변경] <source>${java-version}</source>
+	                    [변경]<target>${java-version}</target>
+	                    <compilerArgument>-Xlint:all</compilerArgument>
+	                    <showWarnings>true</showWarnings>
+	                    <showDeprecation>true</showDeprecation>
+	                    <encoding>UTF-8</encoding>
+	                </configuration>
+            	</plugin>
+     </plugins>
+	//..............
+	<dependencys>
+			<!-- Workspace 한글경로 포함문제 해결 -->
+		<dependency>
+		    <groupId>xerces</groupId>
+		    <artifactId>xercesImpl</artifactId>
+		    <version>2.12.2</version>
+		</dependency>
+	</dependencys>	
+
+03 한글Filter 설정(web.xml)
+		<!-- 한글 변환 필터 시작 -->
+		<filter>
+			<filter-name>encodingFilter</filter-name>
+			<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+			<init-param>
+				<param-name>encoding</param-name>
+				<param-value>UTF-8</param-value>
+			</init-param>
+			<init-param>
+				<param-name>forceEncoding</param-name>
+				<param-value>true</param-value>
+			</init-param>
+		</filter>
+		
+		<filter-mapping>
+			<filter-name>encodingFilter</filter-name>
+			<url-pattern>/*</url-pattern>
+		</filter-mapping>
+		<!-- 한글 변환 필터 끝 -->
+
+	
+04  lombok 사용하기
+	1) lombok 라이브러리 받기(pom.xml)
+	 	<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.28</version>
+			<scope>provided</scope>
+		</dependency>
+	
+	2) Maven Dependencies -> lombok-1.18.28.jar 우클릭 run->java Application 실행
+	   STS 경로 확인후 install
+	   
+	3) MemberDto 생성후 
+		@Getter
+		@Setter
+		@ToString
+		@Data
+		
+		@AllArgConstructor
+		@NoArgConstructor	
+	
+05  	Test Code작성
+		Junit 파일 생성후 작업
+		@Test
+		public void test() {
+			Person obj =new Person();
+			obj.setName("홍길동");
+			obj.setAddr("대구");
+			obj.setAge(55);
+			System.out.println(obj);
+		}
+	
+06	Spring Core
+	IoC : 제어역전  	Context 생성 Bean을 생성 관리는 프레임워크			
+	DI	: 의존주입	@Autowired 을 사용해서 Context의 Bean의 주소를 받아서 사용
+	
+	1) @Component 를 특정 클래스에 부여(@Service , @Controller , @Repository)
+	root-context.xml or servlet-context.xml 에 
+	<context:component-scan base-package="com.test.app.domain.dto" />
+	2) @Autowire 로 Bean 연결
+	
+
+
+07 Bean만들기
+
+1) @Controller,@Service,@Repository , @Component 애노테이션 + root-context.xml Component-scan
+2) @Configuration @Bean애노테이션 + + root-context.xml Component-scan
+3) xml에 직접 bean주입
+	<bean id="memoDto2" class="com.test.app.domain.dto.MemoDto">
+		<constructor-arg name="id" value="123"  />
+		<constructor-arg name="text" value="HAHAHA" />
+		<constructor-arg name="writer" value="HAHAHA" />
+	</bean>
+	
+
+
+
+
+
+
+
