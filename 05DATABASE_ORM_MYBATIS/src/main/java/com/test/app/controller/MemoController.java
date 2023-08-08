@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.test.app.domain.dto.MemoDto;
@@ -31,5 +32,9 @@ public class MemoController {
 	};
 	
 	@PostMapping("/postMemo")
-	public void f2() {log.info("POST /memo/postMemo");};
+	public void f2(MemoDto dto) {
+		log.info("POST /memo/postMemo.." + dto);
+		service.addMemo(dto);
+		log.info("POST /memo/postMemo..nextId : " + dto.getId());
+	};
 }

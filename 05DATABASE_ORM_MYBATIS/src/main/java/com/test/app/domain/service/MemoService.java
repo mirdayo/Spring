@@ -22,9 +22,12 @@ public class MemoService {
 		log.info("MemoService's getAllMemo Call");
 		return mapper.selectAll();
 	}
-	
+
 	//메모작성
-	
+	public int addMemo(MemoDto dto) {
+		log.info("MemoService's addMemo Call");
+		return mapper.insert(dto);
+	}
 	
 	//메모 수정
 	
