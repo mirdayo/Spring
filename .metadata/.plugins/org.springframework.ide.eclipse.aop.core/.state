@@ -2,6 +2,7 @@
 <aop-reference-model>
 <aop-project name="04DATABASE_DATASOURCE"/>
 <aop-project name="01CONTROLLER_PARAMETER"/>
+<aop-project name="09AOP"/>
 <aop-project name="03CONTROLLER_EXCEPTION"/>
 <aop-project name="05DATABASE_ORM_MYBATIS"/>
 <aop-project name="06BUSINESS_TRANSACTION"/>
