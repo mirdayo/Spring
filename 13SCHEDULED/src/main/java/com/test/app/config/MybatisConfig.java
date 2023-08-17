@@ -20,6 +20,4 @@ public class MybatisConfig {
 		sessionFactory.setDataSource(dataSource2);
 		return sessionFactory.getObject();
 	}
-	
-	
 }

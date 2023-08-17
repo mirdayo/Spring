@@ -44,8 +44,6 @@ public class DataSourceConfig {
     public DataSourceTransactionManager transactionManager() {
         return new DataSourceTransactionManager(dataSource2());
     }
-	
-	
 }
 
 

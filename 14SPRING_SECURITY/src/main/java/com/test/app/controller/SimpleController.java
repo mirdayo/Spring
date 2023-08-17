@@ -1,5 +1,6 @@
 package com.test.app.controller;
 
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -10,8 +11,14 @@ import lombok.extern.slf4j.Slf4j;
 public class SimpleController {
 
 	@GetMapping("/user")
-	public void user() {
+	public void user(Authentication authentication) {
 		log.info("GET /user...");
+		System.out.println("authentication : " + authentication);
+		System.out.println("name : " + authentication.getName());
+		System.out.println("principal : " + authentication.getPrincipal());
+		System.out.println("authorities : " + authentication.getAuthorities());
+		System.out.println("detail : " + authentication.getDetails());
+		System.out.println("credentials : " + authentication.getCredentials());
 	}
 	
 	@GetMapping("/member")
@@ -22,5 +29,15 @@ public class SimpleController {
 	@GetMapping("/admin")
 	public void admin() {
 		log.info("GET /admin...");
+	}
+	
+	@GetMapping("/myLogin")
+	public void myLogin() {
+		log.info("GET /myLogin...");
+	}
+	
+	@GetMapping("/error")
+	public void error() {
+		log.info("GET /error...");
 	}
 }
