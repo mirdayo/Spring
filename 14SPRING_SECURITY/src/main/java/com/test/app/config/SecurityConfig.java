@@ -1,5 +1,7 @@
 package com.test.app.config;
 
+import javax.sql.DataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +11,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.rememberme.JdbcTokenRepositoryImpl;
+import org.springframework.security.web.authentication.rememberme.PersistentTokenRepository;
 
 import com.test.app.config.auth.PrincipalDetailsService;
 import com.test.app.config.auth.exceptionhandler.CustomAccessDeniedHandler;
@@ -24,6 +28,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+	
+	@Autowired
+	private DataSource dataSource2;
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -53,7 +60,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 			.exceptionHandling()
 			.authenticationEntryPoint(new CustomAuthentictionEntryPoint())	//인증이 필요한 자원에 접근 예외처리
-			.accessDeniedHandler(new CustomAccessDeniedHandler());		//권한 실패 예외처리
+			.accessDeniedHandler(new CustomAccessDeniedHandler())		//권한 실패 예외처리
+			
+			.and()
+			//REMEMBER-ME ADDED
+			.rememberMe()
+			.alwaysRemember(false)
+			.rememberMeParameter("remember-me")
+			.tokenRepository(tokenRepository());	
 	}
 	
 	@Autowired
@@ -88,4 +102,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		return new BCryptPasswordEncoder();
 	}
 	
+	//REMEMBER-ME를 통한 자동로그인
+	//토큰 저장 Bean
+	@Bean
+	public PersistentTokenRepository tokenRepository() {
+		JdbcTokenRepositoryImpl repo = new JdbcTokenRepositoryImpl();
+		repo.setDataSource(dataSource2);
+		return repo;
+	}
 }
