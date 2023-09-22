@@ -1,0 +1,173 @@
+@charset "UTF-8";
+main>div{
+    display:block;
+}
+.subsection{
+    border: 1px solid;
+    margin-top:-196px;
+    height : 774px;
+    width:100%;
+    position:relative;
+
+}
+main>.subsection>.sub1{
+    position: relative;
+}
+main>.subsection>.sub1>.sub2{}
+main>.subsection>.sub1>.sub2>.front{
+    width:100%;
+    display: block;
+}
+main>.subsection>.sub1>.sub2>.front>a{
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.sub1{
+    position:relative;
+}
+.sub1>.sub2{
+    position:relative;
+    transform-style:preserve-3d;
+    transition:1.5s;
+}
+.sub2>.front img{
+    width:100%;
+    height: 774px;
+    z-index:-10;
+    vertical-align: top;
+    position:absolute;
+}
+.sub2>.back img{
+    width:100%;
+    height: 774px;
+    z-index:-10;
+    vertical-align: top;
+    position:absolute;
+}
+.sub2>.front,
+.sub2>.back{
+    /* position:relative; */
+    backface-visibility: hidden;
+}
+.sub2>.front{
+    z-index:2;
+    /* display: flex; */
+}
+.sub2>.back{
+    display:flex;
+    transform: rotateY(180deg);
+}
+/*.sub1:hover .sub2{
+    transform:rotateY(180deg);
+}*/
+.contents{
+    display:flex;
+    border:1px solid;
+    width: 100%;
+    height: 424px;
+    background-color: lightgray;
+}
+.contents>.contentslist{
+    /* height:262px; */
+    width:100%;
+
+}
+.contents>.contentslist>.mainmovie.swiper-container>.swiper-wrapper{
+   display: flex;
+   position:relative;
+   height: 424px;
+   justify-content: space-around;
+}
+.contents>.contentslist>.mainmovie.swiper-container>.swiper-wrapper>li{
+    list-style: none;
+    position: relative;
+    height:50px;
+    align-items: center;
+    /* display: flex; */
+
+}
+.contents>.contentslist>.mainmovie.swiper-container>.swiper-wrapper>li>a{
+    text-decoration: none;
+    color:black;
+    margin-top:10px;
+    /* border:1px solid;     */
+    text-align: center;
+    align-items: center;
+    font-size:12px;
+    font-weight: bold;
+    margin-left:15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+.contents>.contentslist>.mainmovie.swiper-container>.swiper-wrapper>li>a img{
+    width:232px;
+    height: 312px;
+    margin-top:25px;
+    margin-left:10px;
+    padding-bottom:30px;
+
+}
+/* 오른쪽 사이드 배너2 */
+.quick_section{
+    position: absolute;
+    top: 200px;
+    width: 82px;
+    right: 20px;
+    text-align: center;
+    z-index: 10;
+}
+/* 누르면 최상단 이동 */
+.quick_section>.quick_menu{
+    overflow: hidden;
+    background: white;
+    width: 76px;
+    padding-top: 15px;
+    /* div뒤에 그림자 효과 */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    text-align: center;
+    border-radius: 4px;
+}
+.quick_section>.quick_menu a {
+    display: block;
+    padding: 5px;
+}
+.quick_section>.quick_menu>.quick_top {
+    padding-left: 13px;
+    margin-top: 10px;
+    letter-spacing: 5px;
+    color: white;
+    background-color: #3a3a3a;
+}
+/* 왼쪽 사이드 배너1 */
+.left_section {
+    position: absolute;
+    top: 300px;
+    left: 45%;
+    margin-left: -660px;
+    z-index: 100;
+}
+.left_section>.left_banner {}
+.left_section>.left_banner a{
+    display: block;
+    overflow: hidden;
+    width: 145px;
+    height: 145px;
+}
+.left_section>.left_banner a img {
+    border: none;
+}
+/* 누르면 광고 닫히게 */
+.left_section>.banner_close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 13px;
+    height: 13px;
+    border: 0;
+    /* x표시 이미지 */
+    background: transparent url(../image/close_13_gry.png) no-repeat 0 0;
+}
+   

@@ -1,0 +1,399 @@
+/* 인풋박스 누르면 도트테두리로 교체 */
+input:focus, textarea:focus, input[type="checkbox"]:checked + label {
+    outline-style: dotted; outline-width: 1px; outline-color: black;
+}
+
+/* 로그인 전체 */
+.login-contents{
+    width: 100%;
+    display: block;
+    margin: 10px 0px 10px 0px;
+}
+.login-contents>.login-main{
+    position: relative;
+    padding: 0px 0px 60px 0px;
+}
+.login-contents>.login-main>.login-ul{
+    padding-top: 30px;
+}
+
+/* 회원 로그인 */
+/* 회원 비회원 창 */
+.login-contents>.login-main>.login-ul>.active>.top-btn{
+    margin: 0px auto 0px auto;
+    max-width: 1100px;
+}
+.login-contents>.login-main>.login-ul>.active>.top-btn>.tab-member-btn{
+    position: relative;
+    width: 520px;
+    height: 50px;
+    left: 30px;
+    border: none;
+    border-bottom: 2px solid black;
+    line-height: 50px;
+    background-color: white;
+    font-size: 15px;
+}
+.login-contents>.login-main>.login-ul>.active>.top-btn>.tab-member-btn>span {
+    position: relative;
+    vertical-align: top;
+    white-space: nowrap;
+}
+.login-contents>.login-main>.login-ul>.active>.top-btn>.tab-nonmember-btn {
+    position: relative;
+    width: 520px;
+    left: 25px;
+    height: 50px;
+    border: none;
+    border-bottom: 2px solid lightgray;
+    line-height: 50px;
+    background-color: white;
+    font-size: 15px;
+}
+.login-contents>.login-main>.login-ul>.active>.top-btn>.tab-nonmember-btn>span {
+    position: relative;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+/* 로그인 위 설명 */
+.tip {
+    font-size: 16px;
+}
+
+/* 본격 로그인 창 */
+/* 회원 로그인 */
+.login-contents>.login-main.login-ul>.active{
+    
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con{
+    position: relative;
+    overflow: inherit;
+    width: auto;
+    height: auto;
+    margin-top: 20px;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member{
+    padding: 60px 0;
+    background-color: #f5f5f5;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner{
+    position: relative;
+    width: 1050px;
+    margin: 0 auto;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.login-box{
+    position: relative;
+    width: 500px;
+    min-height: 220px;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.login-box>form{}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.login-box>form>.login-area{
+    position: relative;
+    margin-top: 20px;
+    padding-right: 160px;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.login-box>form>.login-area>input{}
+/* 로그인 버튼 */
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.login-box>form>.login-area>.login-btn{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 125px;
+    height: 115px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5%;
+    font-size: 16px;
+}
+/* id 입력칸 */
+#userid {
+    display: block;
+    width: 95%;
+    height: 45px;
+    border: 1px solid lightgray;
+}
+/* pw입력칸 */
+#userpw {
+    width: 95%;
+    height: 45px;
+    border: 1px solid lightgray;
+}
+/* 인풋박스 디자인 */
+input[type="text"], input[type="password"] {
+    padding: 0 18px;
+    border-radius: 4px;
+    line-height: 40px;
+}
+
+/* 비회원 로그인 창 */
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box {
+    display: none;
+    position: relative;
+    width: 500px;
+    min-height: 220px;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.tip::after {
+    content: "*는 필수 입력 항목입니다.";
+    color: red;
+    font-size: 10px;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-login-area {
+    margin-top: 10px;
+}
+/* * 필수 항목 표시 */
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-login-area>label::after {
+    position: relative;
+    right: 0;
+    top: 1px;
+    content: "*";
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
+    cursor: default;
+}
+/* 인풋 박스 */
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-login-area>input {
+    width: 250px;
+    height: 45px;
+    border: 1px solid lightgray;
+}
+.mypage-warp>.non-login-box {
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-login-area>.btn-secondary {
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-list {
+    width: 1000px;
+    margin-top: 33px;
+    padding-left: 128px;
+    font-size: 15px;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-list>li {
+    margin: 0 0 5px 6px;
+    text-indent: -6px;
+    line-height: 1.4;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-list>li::before {
+    content: "▣";
+}
+/* 인증, 우편검색 버튼 */
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-login-area>.btn-phone {
+    display: inline-block;
+    font-weight: inherit;
+    font-size: 13px;
+    text-align: center;
+    width: 50px;
+    height: 30px;
+    color: white;
+    background-color: lightslategray;
+    border: none;
+    border-radius: 2px;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-login-area>.btn-addr {
+    display: inline-block;
+    font-weight: inherit;
+    font-size: 13px;
+    text-align: center;
+    width: 100px;
+    height: 40px;
+    color: white;
+    background-color: lightslategray;
+    border: none;
+    border-radius: 2px;
+}
+/* 하단 버튼 */
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-bottom-btn {
+    width: 1000px;
+    margin: 60px 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-bottom-btn>.join-member {
+    width: 160px;
+    height: 45px;
+    line-height: 43px;
+    padding: 0 18px;
+    margin: 0 3px;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.non-login-box>.non-bottom-btn>.non-login-btn {
+    width: 160px;
+    height: 45px;
+    line-height: 43px;
+    padding: 0 18px;
+    margin: 0 3px;
+    cursor: pointer;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: black;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* 로그인 하단부 */
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.login-box>.login-bot{
+    margin: 15px 0px 40px;
+}
+/* 아이디 저장 체크박스 */
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.login-box>.login-bot>.login-check{
+    float: left;
+}
+input[type="checkbox"] {
+    display: none;
+    position: relative;
+    top: 0; left: 0;
+    width: 0px; height: 0px;
+    padding: 0; margin: 0;
+    overflow: hidden;
+    border: none 0;
+    vertical-align: middle;
+    clip: rect(0, 0, 0, 0);
+}
+input[type="checkbox"] + label {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 12px;
+}
+input[type="checkbox"]:checked + label::before {
+    border-color: black;
+    /* 체크 이미지 */
+    background: white url(../image/chk_8.png) no-repeat center 6px;
+}
+input[type="checkbox"] + label::before {
+    content: "";
+    display: inline-block;
+    border: 1px solid lightgray;
+    background-color: white;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    vertical-align: -5px;
+    border-radius: 5px;
+}
+/* 회원가입 | 아이디 찾기 | 비밀번호 찾기 */
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.login-box>.login-bot>.login-menu{
+    float: right;
+    line-height: 20px;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.login-box>.login-bot>.login-menu a{
+    position: relative;
+    font-size: 12px;
+    color: #666;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.login-box>.login-bot>.login-menu>a:after{
+    content: "  |";
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.login-box>.login-bot>.login-menu>a:nth-child(3)::after{
+    content: "";
+}
+
+/* 로그인 광고 -> 로그인 박스 오른쪽에 위치*/
+/* js 광고 넘어가는 형식으로 */
+.f-section>.swiper {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 450px;
+    height: 220px;
+    background-color: white;
+    overflow: hidden;
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.f-section>.swiper>.swiper-wrapper {
+}
+.login-contents>.login-main>.login-ul>.active>.tab_con>.login-member>.contents_inner>.f-section>.swiper>.swiper-wrapper>.swiper-slide img {
+    border: none;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+/* 로그인창 하단 광고 */
+.banner_section{
+    padding-top: 20px;
+    text-align: center;
+}
+.banner_section>.bot_banner{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.banner_section>.bot_banner a {
+    display: block;
+    width: 1000px;
+    border: none;
+    margin: 0 auto;
+}
+
+/* 우리꺼에 맞춰서 이미지or배너 선정하기 */
+/* 왼쪽 사이드 배너1 */
+.left_section {
+    position: absolute;
+    top: 300px;
+    left: 45%;
+    margin-left: -660px;
+    z-index: 100;
+}
+.left_section>.left_banner {}
+.left_section>.left_banner a{
+    display: block;
+    overflow: hidden;
+    width: 145px;
+    height: 145px;
+}
+.left_section>.left_banner a img {
+    border: none;
+}
+/* 누르면 광고 닫히게 */
+.left_section>.banner_close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 13px;
+    height: 13px;
+    border: 0;
+    /* x표시 이미지 */
+    background: transparent url(../image/close_13_gry.png) no-repeat 0 0;
+}
+/* 오른쪽 사이드 배너2 */
+.quick_section{
+    position: absolute;
+    top: 200px;
+    width: 82px;
+    right: 20px;
+    text-align: center;
+    z-index: 10;
+}
+/* 누르면 최상단 이동 */
+.quick_section>.quick_menu{
+    overflow: hidden;
+    background: white;
+    width: 76px;
+    padding-top: 15px;
+    /* div뒤에 그림자 효과 */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    text-align: center;
+    border-radius: 4px;
+}
+.quick_section>.quick_menu a {
+    display: block;
+    padding: 5px;
+}
+.quick_section>.quick_menu>.quick_top {
+    padding-left: 13px;
+    margin-top: 10px;
+    letter-spacing: 5px;
+    color: white;
+    background-color: #3a3a3a;
+}

@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/* 푸터 */
+.footer {
+    padding-top: 50px;
+}
+.footer>.inner {
+    position: relative;
+    width: 980px;
+    margin: 0 auto;
+}
+.footer>.inner>.footerlogo {
+    display: block;
+    margin-bottom: 20px;
+}
+/* 푸터 로고 */
+.footerlogo>img {
+    width: 400px;
+    height: 80px;
+}
+.footer>.inner>.footermenu {
+    margin-bottom: 15px; 
+}
+/* 푸터 1번 리스트 */
+.footer>.inner>.footermenu>li {
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    padding-left: 10px;
+}
+.footer>.inner>.footermenu>li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    height: 10px;
+    border-left: 1px solid #707070;
+}
+.footer>.inner>.footermenu>li:first-child {
+    padding-left: 0;
+}
+.footer>.inner>.footermenu>li:first-child:before {
+    display: none;
+}
+.footer>.inner>.footermenu:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.footer>.inner>.footermenu>li>a {
+    display: block;
+    font-size: 12px;
+    color:black;
+}
+.footer>.inner>.address {
+    line-height: 1.5;
+    font-size: 12px;
+}
+/* 푸터 주소부터 */
+.footer>.inner>.address address {
+    display: inline;
+    margin-right: 10px;
+}
+.footer>.inner>.address span {
+    margin-right: 10px;
+}
+.footer>.inner>.address>.bar {
+    position: relative;
+    padding-left: 10px;
+}
+.footer>.inner>.address>.bar::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    height: 10px;
+    border-left: 1px solid #707070;
+}
+/* 푸터 최하단 */
+.footer>.inner>.copyright {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+}

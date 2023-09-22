@@ -12,7 +12,7 @@
 	ID : <input name="username"><br/>
 	PW : <input name="password" type="password"><br/>
 	<div>
-		<input type="checkbox" name="remember-me" id="remember-md" />
+		<input type="checkbox" name="remember-me" id="remember-me" />
 		<label for="remember-me">로그인 유지</label>
 	</div>
 	<input type="submit" />
